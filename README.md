@@ -18,33 +18,33 @@ All the datasets used in the project is added to this section
 
   # CODE
   - Resizing Code, first you need to resize all the data in 416-to-418 ratio
-  % Set your input and output folder paths
-inputFolderPath = 'C:\Users\mahen\OneDrive\Documents\DRVERLESS FORMULA BHARAT\Cone Detection\fsoco_segmentation_train\train';
-outputFolderPath = 'C:\Users\mahen\OneDrive\Documents\DRVERLESS FORMULA BHARAT\Cone Detection\resize\trainResize';
+  - 	% Set your input and output folder paths
+		inputFolderPath = 'C:\Users\mahen\OneDrive\Documents\DRVERLESS FORMULA BHARAT\Cone Detection\fsoco_segmentation_train\train';
+		outputFolderPath = 'C:\Users\mahen\OneDrive\Documents\DRVERLESS FORMULA BHARAT\Cone Detection\resize\trainResize';
 
-% Set the desired new size (width, height)
-newSize = [416, 416];  % Adjust the size as needed
+		% Set the desired new size (width, height)
+		newSize = [416, 416];  % Adjust the size as needed
 
-% Create output folder if it doesn't exist
-if ~exist(outputFolderPath, 'dir')
-    mkdir(outputFolderPath);
-end
+		% Create output folder if it doesn't exist
+		if ~exist(outputFolderPath, 'dir')
+		    mkdir(outputFolderPath);
+		end
 
-% List all files in the input folder
-files = dir(fullfile(inputFolderPath, '*.jpg'));  % change the image format according to your dataset
+		% List all files in the input folder	
+		files = dir(fullfile(inputFolderPath, '*.jpg'));  % change the image format according to your dataset
 
-% Loop through each file
-for i = 1:length(files)
-    % Read the image
-    imagePath = fullfile(inputFolderPath, files(i).name);
-    img = imread(imagePath);
+		% Loop through each file
+		for i = 1:length(files)
+    		% Read the image
+    		imagePath = fullfile(inputFolderPath, files(i).name);
+    		img = imread(imagePath);
     
-    % Resize the image
-    resizedImg = imresize(img, newSize);
+    		% Resize the image
+ 		   resizedImg = imresize(img, newSize);
     
-    % Save the resized image to the output folder
-    [~, fileName, fileExt] = fileparts(files(i).name);
-    outputImagePath = fullfile(outputFolderPath, [fileName, '_resized', fileExt]);
-    imwrite(resizedImg, outputImagePath);
-end
+	    % Save the resized image to the output folder
+	    [~, fileName, fileExt] = fileparts(files(i).name);
+	    outputImagePath = fullfile(outputFolderPath, [fileName, '_resized', fileExt]);
+	    imwrite(resizedImg, outputImagePath);
+		end
 
