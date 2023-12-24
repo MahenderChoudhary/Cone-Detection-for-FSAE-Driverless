@@ -3,6 +3,7 @@ Hey there! 👋 Welcome to our FSAE Driverless Cone Detection project on GitHub!
 
 ## Table of Contents:
 - [Datasets](#datasets)
+	- [The FSOCO Dataset](#fsoco)
 
 # Datasets
 All the datasets used in the project is added to this section
