@@ -48,9 +48,7 @@ All the datasets used in the project is added to this section
 	    imwrite(resizedImg, outputImagePath);
 		end
 - cone detection code
-- 
-
-import rospy
+- 	import rospy
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 import os
@@ -155,5 +153,4 @@ if __name__ == '__main__':
         detector.run()
     except rospy.ROSInterruptException:
         pass
-
 
